@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClinicaUTP.AddPaciente"
+             Title="Agrega un nuevo paciente">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Margin="10">
+        <VerticalStackLayout>
+            <Label Text="Nombre" FontSize="16" />
+            <Entry Text="{Binding pacienteDetails.Nombre}" Placeholder="Primer Nombre" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Apellido" FontSize="16" />
+            <Entry Text="{Binding pacienteDetails.Apellido}" Placeholder="Apellido" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Correo" FontSize="16" />
+            <Entry Text="{Binding pacienteDetails.Correo}" Placeholder="Ingrese su correo institucional" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Numero de cedula" FontSize="16" />
+            <Entry Text="{Binding pacienteDetails.Cedula}" Placeholder="Ingrese su informacion de contacto" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Direccion" FontSize="16" />
+            <Entry Text="{Binding pacienteDetails.Direccion}" Placeholder="Ingrese su direccion principal" />
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Fecha de nacimiento" FontSize="16" />
+            <DatePicker Date="{Binding pacienteDetails.FechaDeNacimiento}"  />
+        </VerticalStackLayout>
+
+        <Button Command="{Binding AddPacienteCommand}" Text="Guardar detalles del paciente"/>
+    </StackLayout>
+</ContentPage>
